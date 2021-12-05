@@ -24,9 +24,10 @@ public class Dijkstra_02 {
     }
 
     public HashMap<String, Integer> dijkstraFunc(HashMap<String, ArrayList<Edge>> graph, String start) {
-        Edge edgeNode;
-        int currentDistance;
-        String currentNode;
+        Edge edgeNode, adjacentNode;
+        ArrayList<Edge> nodeList;
+        int currentDistance, weight, distance;
+        String currentNode, adjacent;
         HashMap<String, Integer> distances = new HashMap<>();
 
         for (String key : graph.keySet()) {
@@ -47,12 +48,19 @@ public class Dijkstra_02 {
                 continue;
             }
 
+            nodeList = graph.get(currentNode);
+            for (int index = 0; index < nodeList.size(); index++) {
+                adjacentNode = nodeList.get(index);
+                adjacent = adjacentNode.vertex;
+                weight = adjacentNode.distance;
+                distance = currentDistance + weight;
 
-
+                if (distance < distances.get(adjacent)) {
+                    distances.put(adjacent, distance);
+                    priorityQueue.add(new Edge(distance, adjacent));
+                }
+            }
         }
-
-
-
         return distances;
 
     }
@@ -68,9 +76,9 @@ public class Dijkstra_02 {
         graph.put("F", new ArrayList<>(Arrays.asList(new Edge(5, "A"))));
 
         Dijkstra_02 dObject = new Dijkstra_02();
-        HashMap<String, Integer> a = dObject.dijkstraFunc(graph, "A");
+        HashMap<String, Integer> result = dObject.dijkstraFunc(graph, "A");
 
-        System.out.println("a = " + a);
+        System.out.println("result = " + result);
 
     }
 }

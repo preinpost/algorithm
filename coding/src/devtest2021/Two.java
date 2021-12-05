@@ -55,10 +55,11 @@ public class Two {
                 }
 
                 System.out.println(String.format("Current Pointer = %s", itemName));
+                System.out.println("orderList.size() = " + orderList.size());
 
                 for (int i = 0 ; i < firePit.size() ; i++) {
                     boolean isComplete = checkExpired(firePit.get(i));
-                    System.out.println(String.format("평가 항목 : %s | 완료 여부 : %s", firePit.get(i), isComplete));
+//                    System.out.println(String.format("평가 항목 : %s | 완료 여부 : %s", firePit.get(i), isComplete));
 
 
                     if (isComplete) {
@@ -69,32 +70,36 @@ public class Two {
                     }
                 }
 
-                if (itemName != null && firePit.size() < n && startTime >= time) {
+                System.out.println("firePit.size() = " + firePit.size());
+                                                    // time이 4초 일때, B 3이 들어가야 함
+                if (itemName != null && firePit.size() < n && startTime <= time) {
                     firePit.add(new Pot(recipeMap.get(itemName), 1));
+                    System.out.println("ItemAdded = " + itemName);
 
-                    orderList.remove(0);
+                    if (orderList.size() > 0) {
+                        orderList.remove(0);
+                    }
                 }
 
-                time++;
 
-                if (firePit.size() == 0) {
+                System.out.println("firePit = " + firePit);
+
+                if (time != 0 && firePit.size() == 0) {
                     break;
                 }
 
+                time++;
 
 
 
             }
 
-
-
             return time;
         }
 
-
-
         public boolean checkExpired(Pot firedPot) {
             if (firedPot.stagedTime == firedPot.takeTime) {
+                System.out.println("somepot END");
                 return true;
             }
 
@@ -102,15 +107,12 @@ public class Two {
         }
     }
 
-
-
-
     public static void main(String[] args) {
         Solution sol = new Solution();
 
-        int n = 2;
-        String[] recipes = {"A 3","B 2"};
-        String[] orders = {"A 1","A 2","B 3","B 4"};
+//        int n = 2;
+//        String[] recipes = {"A 3","B 2"};
+//        String[] orders = {"A 1","A 2","B 3","B 4"};
 
 
 //        int n = 3;
@@ -118,9 +120,9 @@ public class Two {
 //        String[] orders = {"PIZZA 1", "FRIEDRICE 2", "SPAGHETTI 4", "SPAGHETTI 6", "PIZZA 7", "SPAGHETTI 8"};
 
 
-//        int n = 1;
-//        String[] recipes = {"COOKIE 10000"};
-//        String[] orders = {"COOKIE 300000"};
+        int n = 1;
+        String[] recipes = {"COOKIE 10000"};
+        String[] orders = {"COOKIE 300000"};
 //        310000
 
 
