@@ -13,11 +13,11 @@ public class L0301 {
 
         while (pnt < n + m) {
 
-            if (arr1[i] < arr2[j] && i < n) {
+            if (arr1[i] < arr2[j]) {
                 newArr[pnt] = arr1[i];
                 i++;
             }
-            else if (arr1[i] >= arr2[j] && j < m) {
+            else if (arr1[i] >= arr2[j]) {
                 newArr[pnt] = arr2[j];
                 j++;
             }
