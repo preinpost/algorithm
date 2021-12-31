@@ -3,7 +3,7 @@ package lecture.L05;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Main {
+public class L0504 {
 
     public void solution(String str) {
 
@@ -38,7 +38,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Main T = new Main();
+        L0504 T = new L0504();
 
         Scanner in = new Scanner(System.in);
         String str = in.nextLine();
