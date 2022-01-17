@@ -14,20 +14,9 @@ public class L0610 {
         int right = arr[n-1];
 
         while (left <= right) {
-            int ep = arr[0];
-            int group = 0;
+
             int mid = (left + right) / 2;
-
-            for (int i = 1; i < n; i++) {
-
-                if (arr[i] - ep >= mid) {
-                    group++;
-                    ep = arr[i];
-
-                }
-            }
-
-            if (group >= c-1) {
+            if (count(arr, mid) >= c) {
                 answer = mid;
                 left = mid + 1;
             } else {
@@ -36,6 +25,20 @@ public class L0610 {
         }
 
         System.out.println(answer);
+    }
+
+    private int count(int[] arr, int mid) {
+        int cnt = 1;
+        int ep = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] - ep >= mid) {
+                cnt++;
+                ep = arr[i];
+            }
+        }
+
+        return cnt;
     }
 
     public static void main(String[] args) {
