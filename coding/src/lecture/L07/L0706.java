@@ -15,10 +15,10 @@ public class L0706 {
             if (tmp.length()>0) System.out.println(tmp);
 
         } else {
-            ch[L] = 1;
-            DFS(L+1);
-            ch[L] = 0;
-            DFS(L+1);
+            ch[L] = 1; // 1을 먼저 체크하고,
+            DFS(L+1); // 왼쪽 트리로 뻗는다.
+            ch[L] = 0; // 0을 먼저 체크하고,
+            DFS(L+1); // 오른쪽 트리로 뻗는다.
         }
 
         return 0;
