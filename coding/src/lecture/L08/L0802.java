@@ -11,13 +11,12 @@ public class L0802 {
     }
 
     public int DFS(int level, int sum, int max, int n, int c, int[] arr) {
-        if (level >= n) {
+        if (sum > c) return 0;
+        if (level == n) {
             return sum;
 
         } else {
             sum += arr[level];
-            if (sum > c) sum -= arr[level];
-
             max = Math.max(max, DFS(level + 1, sum, max, n, c, arr));
 
             sum -= arr[level];
@@ -39,7 +38,6 @@ public class L0802 {
         for (int i = 0; i < n; i++) {
             arr[i] = in.nextInt();
         }
-
 
         T.solution(c, n, arr);
 
