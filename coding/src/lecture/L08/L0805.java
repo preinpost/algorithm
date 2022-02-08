@@ -1,6 +1,10 @@
 package lecture.L08;
 
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class L0805 {
 
@@ -13,25 +17,27 @@ public class L0805 {
 
         State state = new State();
 
-        DFS(0, state, n, arr, m);
+        List<Integer> list = Arrays.stream(arr).sorted().boxed().collect(Collectors.toList());
+        list.sort(Comparator.reverseOrder());
+
+        DFS(0, state, n, list, m);
         System.out.println(state.min);
 
     }
 
-    public void DFS(int level, State state, int n, int[] arr, int m) {
+    public void DFS(int level, State state, int n, List<Integer> arr, int m) {
+        if (state.sum > m) return;
+        if (level >= state.min) return;
 
-        if (state.sum >= m) {
+        if (state.sum == m) {
+            state.min = Math.min(state.min, level);
             return;
         }
 
         for (int i = 0; i < n; i++) {
-            state.sum += arr[i];
+            state.sum += arr.get(i);
             DFS(level+1, state, n, arr, m);
-
-            if (state.sum == m)
-                state.min = Math.min(state.min, level+1);
-
-            state.sum -= arr[i];
+            state.sum -= arr.get(i);
         }
     }
 
