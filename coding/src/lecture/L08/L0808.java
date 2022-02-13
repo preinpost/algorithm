@@ -13,6 +13,7 @@ public class L0808 {
     }
 
     public void DFS(int level, int n, int f) {
+        if (flag) return;
 
         if (level == n) {
             boolean result = simulation(arr, n, f);
@@ -30,7 +31,6 @@ public class L0808 {
             if (!arr.contains(i)){
                 arr.add(i);
                 DFS(level+1, n, f);
-                if (flag) return;
                 arr.remove(arr.size()-1);
             }
         }
