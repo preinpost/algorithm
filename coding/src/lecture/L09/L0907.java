@@ -52,7 +52,7 @@ public class L0907 {
 
     public int find(int v) {
         if (v == group[v]) return v;
-        else return group[v]= find(group[v]);
+        else return group[v] = find(group[v]);
     }
 
     public static void main(String[] args) {
