@@ -2,7 +2,7 @@ package baek;
 
 import java.util.Scanner;
 
-public class Main {
+public class B1932 {
 
     static int[][] dp;
     static int answer = -1;
@@ -34,7 +34,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Main T = new Main();
+        B1932 T = new B1932();
 
         Scanner in = new Scanner(System.in);
 
