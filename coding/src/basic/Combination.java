@@ -6,7 +6,7 @@ public class Combination {
 
     public void recursive(int L, int s, int[] arr) {
 
-        if (L == 2) {
+        if (L == 3) {
             for (int i : combi) {
                 System.out.print(i + " ");
             }
@@ -24,8 +24,8 @@ public class Combination {
     public static void main(String[] args) {
         Combination c = new Combination();
 
-        int[] arr = new int[] {1, 2, 3, 4};
-        combi = new int[2];
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
+        combi = new int[3];
 
         c.recursive(0, 0, arr);
     }

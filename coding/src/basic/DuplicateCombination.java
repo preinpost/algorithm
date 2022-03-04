@@ -6,7 +6,7 @@ public class DuplicateCombination {
 
     public void recursive(int L, int s, int[] arr) {
 
-        if (L == 2) {
+        if (L == 4) {
             for (int i : dupCombi) {
                 System.out.print(i + " ");
             }
@@ -25,8 +25,8 @@ public class DuplicateCombination {
     public static void main(String[] args) {
         DuplicateCombination c = new DuplicateCombination();
 
-        int[] arr = new int[] {1, 2, 3, 4};
-        dupCombi = new int[2];
+        int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8};
+        dupCombi = new int[4];
 
         c.recursive(0, 0, arr);
     }

@@ -9,7 +9,7 @@ public class DuplicatePermutation {
 
     public void recursive(int L, int[] arr) {
 
-        if (L == 2) {
+        if (L == 4) {
             for (int i : dupPermu) {
                 System.out.print(i + " ");
             }
@@ -32,7 +32,7 @@ public class DuplicatePermutation {
 
         int[] arr = new int[] {1, 2, 3, 4};
         chk = new int[4];
-        dupPermu = new int[2];
+        dupPermu = new int[4];
 
         p.recursive(0, arr);
     }
