@@ -5,9 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class B12865 {
+public class Main {
 
-    static class Pack implements Comparable<Pack> {
+    static class Pack {
         int weight;
         int value;
 
@@ -15,19 +15,13 @@ public class B12865 {
             this.weight = weight;
             this.value = value;
         }
-
-        @Override
-        public int compareTo(Pack o) {
-            if (o.weight == this.weight) return o.value - this.value;
-            return this.weight - o.weight;
-        }
     }
 
     static int[] dy;
 
     public static void main(String[] args) {
 
-        B12865 b12865 = new B12865();
+        Main b12865 = new Main();
 
         Scanner in = new Scanner(System.in);
 
@@ -50,10 +44,8 @@ public class B12865 {
     }
 
     public void solution(List<Pack> packs, int k) {
-        Collections.sort(packs);
 
         for (Pack pack : packs) {
-
             for (int i = k; i >= 0; i--) {
                 if (i-pack.weight < 0) break;
                 dy[i] = Math.max(dy[i], dy[i-pack.weight] + pack.value);
