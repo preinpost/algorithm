@@ -1,11 +1,10 @@
 package baek;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
+public class B12865 {
 
     static class Pack {
         int weight;
@@ -21,7 +20,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Main b12865 = new Main();
+        B12865 b12865 = new B12865();
 
         Scanner in = new Scanner(System.in);
 
@@ -47,7 +46,7 @@ public class Main {
 
         for (Pack pack : packs) {
             for (int i = k; i >= 0; i--) {
-                if (i-pack.weight < 0) break;
+                if (i-pack.weight < 0) continue;
                 dy[i] = Math.max(dy[i], dy[i-pack.weight] + pack.value);
             }
         }
