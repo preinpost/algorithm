@@ -2,7 +2,7 @@ package baek;
 
 import java.util.*;
 
-public class Main {
+public class B1655 {
 
     public static void main(String[] args) {
 
@@ -26,7 +26,7 @@ public class Main {
 
          */
 
-        Main b1655 = new Main();
+        B1655 b1655 = new B1655();
 
         Scanner in = new Scanner(System.in);
 
