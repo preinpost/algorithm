@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class B11725 {
 
     /*
         출력조건 : 첫째 줄부터 N-1개의 줄에 각 노드의 부모 노드 번호를 2번 노드부터 순서대로 출력한다.
@@ -37,7 +37,7 @@ public class Main {
     static int[] answer;
 
     public static void main(String[] args) throws IOException {
-        Main b11725 = new Main();
+        B11725 b11725 = new B11725();
 
         List<ArrayList<Integer>> arr = b11725.input();
 
