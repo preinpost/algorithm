@@ -51,11 +51,11 @@ public class B1991 {
     public void traversal(Integer current) {
         if (current == null) return;
         preorder.append((char) (current+65));
-        List<Integer> currentChilds = treeNodeList.get(current);
+        List<Integer> currentChildren = treeNodeList.get(current);
 
-        traversal(currentChilds.get(0));
+        traversal(currentChildren.get(0));
         inorder.append((char) (current+65));
-        traversal(currentChilds.get(1));
+        traversal(currentChildren.get(1));
 
         postorder.append((char) (current+65));
     }
