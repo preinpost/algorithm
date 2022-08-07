@@ -18,10 +18,9 @@ public class 멀쩡한_사각형 {
 
         멀쩡한_사각형 T = new 멀쩡한_사각형();
         T.solution(W, H);
-
     }
 
-    public void solution(int w, int h) {
+    public long solution(int w, int h) {
         // w -> x
         // h -> y
 
@@ -31,9 +30,7 @@ public class 멀쩡한_사각형 {
 
         long block = w / w_divided;
 
-        long answer = (long) w * h - (block * ( w_divided + h_divided - 1 ));
-
-
+        return (long) w * h - (block * ( w_divided + h_divided - 1 ));
     }
 
     int gcd(int a, int b) {
@@ -44,7 +41,4 @@ public class 멀쩡한_사각형 {
             return gcd(b, a%b);
         }
     }
-
-
-
 }

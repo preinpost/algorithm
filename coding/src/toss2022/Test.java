@@ -2,15 +2,15 @@ package toss2022;
 
 import java.util.*;
 
-public class A {
+public class Test {
 
     public static void main(String[] args) {
-        A a = new A();
+        Test test = new Test();
 
         int servers = 2;
         boolean sticky = true;
         int[] requests = new int[]{1,1,2,2};
-        int[][] result = a.solution(servers, sticky, requests);
+        int[][] result = test.solution(servers, sticky, requests);
 
     }
 

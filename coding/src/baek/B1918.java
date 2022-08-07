@@ -16,7 +16,6 @@ public class B1918 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
         String s = bf.readLine();
-
         b1918.solution(s);
     }
 
