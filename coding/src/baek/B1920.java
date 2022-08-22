@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.util.stream.IntStream;
 
+/**
+ * 수 찾기
+ */
 public class B1920 {
 
     public static void main(String[] args) throws IOException {
