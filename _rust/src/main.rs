@@ -1,5 +1,5 @@
 fn main() -> std::io::Result<()>{
-    practice::binary_search::run();
+    practice::quick_sort::run();
     
     Ok(())
 }
