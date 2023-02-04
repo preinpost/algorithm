@@ -1,5 +1,7 @@
+use practice::*;
+
 fn main() -> std::io::Result<()>{
-    practice::quick_sort::run();
+    b1920::run();
     
     Ok(())
 }
