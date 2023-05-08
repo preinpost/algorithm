@@ -2,7 +2,7 @@ package programmers.book.P01;
 
 import java.util.*;
 
-// 문제01. 교점에 별 만들기
+// P01. 교점에 별 만들기
 class Solution {
 
     private static class Point {
